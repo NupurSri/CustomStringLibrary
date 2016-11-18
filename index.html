@@ -1,0 +1,50 @@
+<html>
+  <head>
+   <title>Test Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<script src="tQuery.js"></script>
+   	<script type="text/javascript">
+   		function getFirstOutput(){
+   			var arr = tQuery("12+23|45+67").split("|").get();
+   			document.getElementById('output').value = "["+arr+"]";
+   		}
+
+   		function getSecondOutput(){
+   			var arr = tQuery("12+23|45+67").split("|").split("+").get();
+   			document.getElementById('output').value = "["+arr+"]";
+   		}
+
+   		function getThirdOutput(){
+   			var arr = tQuery("12+23|45+67").split("|").reverse().split("+").get();
+   			document.getElementById('output').value = "["+arr+"]";
+   		}
+   		function getFourthOutput(){
+   			var arr = tQuery("12+23|45+67").split("|").reverse().split("+").join("-").get();
+   			document.getElementById('output').value = "["+arr+"]";
+   		}
+   	</script>
+    </head>
+  <!-- 3. Display the application -->
+  <body>
+    <h1> This is test for library function </h1>
+    <div>Click on below mentioned buttons to check output</div>
+    <div>
+    	<button id="Step1" onClick="getFirstOutput()">tQuery("12+23|45+67").split("|").get() </button>
+    </div>
+    <br/>
+     <div>
+    	<button id="Step1" onClick="getSecondOutput()">tQuery("12+23|45+67").split("|").split("+").get() </button>
+    </div>
+    <br/>
+    <div>
+    	<button id="Step1" onClick="getThirdOutput()">tQuery("12+23|45+67").split("|").reverse().split("+").get() </button>
+    </div>
+    <br/>
+    <div>
+    	<button id="Step1" onClick="getFourthOutput()">tQuery("12+23|45+67").split("|").reverse().split("+").join("-").get()</button>
+    </div>
+    <br/>
+    <textarea id="output"></textarea>
+  </body>
+</html>
